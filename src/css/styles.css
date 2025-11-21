@@ -1,8 +1,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  background-color: #311a2f;
-  color: rgb(235, 235, 235);
+  background-color: #fff0f6;
+  color: #444;
 }
 
 .container {
@@ -21,10 +21,11 @@ body {
 .progressbar {
   position: relative;
   width: 492px;
-  border: 1px solid #e48989;
+  border: 2px solid #ff7063; /* Border pink */
+  background-color: #fff;
   padding: 3px;
   margin: 2px 0px;
-  border-radius: 6%;
+  border-radius: 10px; /* Rounded */
 }
 
 .progresstext {
@@ -37,8 +38,10 @@ body {
 
 .progressfill {
   height: 20px;
-  background-color: #e48989;
+  background-color: #fc897f; /* Isi bar pink */
   width: 0%;
+  border-radius: 5px;
+  transition: width 0.3s ease;
 }
 
 .sorter {
@@ -47,23 +50,49 @@ body {
   grid-template-columns: 120px 1fr 120px;
   grid-gap: 5px;
   width: 420px;
+
+  background-color: #ffffff;
+  border: 4px solid #ffb8b8; /* Border pink muda di sekeliling */
+  border-radius: 25px; /* Sudut membulat */
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
 .button {
-  border: 1px solid #e48989;
+  /* Gradient Pink seperti di screenshot */
+  background: linear-gradient(180deg, #ff9eb5 0%, #ff7063 100%);
+  border: 2px solid #ffffff; /* Border putih di dalam */
+  color: white;
   text-align: center;
   padding: 10%;
   grid-column: 2 / 3;
   cursor: pointer;
+  
+  /* Bentuk Kapsul */
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 1.1em;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  
+  /* Efek timbul 3D */
+  box-shadow: 0 4px 0 #d65a50, 0 5px 10px rgba(0,0,0,0.2);
+  transition: all 0.1s ease;
+  cursor: pointer;
+}
+
+.button:active {
+  transform: translateY(4px); /* Tombol turun ke bawah */
+  box-shadow: 0 0 0 #d65a50, 0 0 0 rgba(0,0,0,0.2); /* Bayangan 3D hilang */
 }
 
 .starting.start.button {
   grid-row: span 6;
+  background: linear-gradient(180deg, #ff9eb5 0%, #ff7063 100%);
 }
 
-.starting.load.button {
-  grid-row: span 3;
-  display: none;
+.sorting.button, .finished.button {
+  grid-row: span 2;
+  display: none; /* Tetap diatur oleh JS */
 }
 
 .sorting.button, .finished.button {
@@ -214,7 +243,7 @@ label {
   display: grid;
   width: 211px;
   grid-template-columns: repeat(2, 1fr);
-  border: 1px solid #e48989;
+  border: 1px solid #ff7063;
   margin-right: 5px;
 }
 
@@ -228,11 +257,11 @@ label {
 
 .result.spacer {
   height: 1px;
-  background-color: #e48989;
+  background-color: #ff7063;
 }
 
 .result.head {
-  background-color: #e48989;
+  background-color: #ff7063;
   color: rgb(255, 255, 255);
 }
 
@@ -272,14 +301,14 @@ label {
 }
 
 a {
-  color: #e48989;
+  color: #ff7063;
   font-weight: bold;
   text-decoration: none;
   cursor: pointer;
 }
 
 a:hover {
-  color: #a2565f;
+  color: #e0554a;
 }
 
 a:visited {
